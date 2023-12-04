@@ -7,7 +7,11 @@ import { HardcodedAuthenticationService } from '../service/hardcoded-authenticat
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-  constructor(public hardcodedAuthenticationService : HardcodedAuthenticationService){}
+  constructor(public hardcodedAuthenticationService : HardcodedAuthenticationService){
+
+    console.log("the value",hardcodedAuthenticationService.isUserLoggedIn);
+    
+  }
 
   
 

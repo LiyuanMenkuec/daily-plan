@@ -11,7 +11,7 @@ export class RouteGuardServiceService{
   constructor(private router: Router, private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    return this.hardcodedAuthenticationService.isUserLoggedIn();
+    return !this.hardcodedAuthenticationService.isUserLoggedIn();
   }
 }
 

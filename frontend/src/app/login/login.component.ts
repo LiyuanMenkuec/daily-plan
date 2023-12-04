@@ -13,20 +13,16 @@ export class LoginComponent {
   password="";
   errorMessage="the username or password is wrong";
   invalidLogin=false;
-  trueUser="what";
-  truePass="what";
+  
 
   constructor(private router: Router, public hardcodedAuthenticationService: HardcodedAuthenticationService){}
 
   handleLogin() {
   
-    if (this.hardcodedAuthenticationService.authenticate(this.username,this.password)){
-      this.invalidLogin=false;
-      this.router.navigate(["your_plan",this.username])
-    }
-    else{
+    if(!this.hardcodedAuthenticationService.authenticate(this.username,this.password)){
       this.invalidLogin=true;
     }
+     
     }
 
 
